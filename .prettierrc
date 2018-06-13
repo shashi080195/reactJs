@@ -1,0 +1,7 @@
+{
+	"eslintIntegration": false,
+	"trailingComma": "all",
+	"useTabs": true,
+	"jsxBracketSameLine": true,
+	"semi": false
+}
