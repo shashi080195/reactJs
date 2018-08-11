@@ -14,8 +14,20 @@ class Auth extends Component {
 		this.updateWindowDimensions = this.updateWindowDimensions.bind(this)
 		this.handleLoginForm = this.handleLoginForm.bind(this)
 	}
+
 	componentWillMount() {
 		this.props.dispatch(getUserData({}))
+		this.props.dispatch({
+			type: "SAVE_USER_DATA",
+			payload: {
+				name: "xyz",
+				id: 345,
+			},
+		})
+		this.props.dispatch({
+			type: "ADD_NAME",
+			payload: "gaurav",
+		})
 		this.updateWindowDimensions()
 		window.addEventListener("resize", this.updateWindowDimensions)
 	}
@@ -45,6 +57,7 @@ class Auth extends Component {
 
 	render() {
 		const { width, height } = this.state
+		console.log("props of this compoenent", this.props)
 		return (
 			<div>
 				<Row

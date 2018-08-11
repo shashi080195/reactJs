@@ -19,8 +19,13 @@ export function* authSaga(dispatch) {
 
 function* handleGetUserData(action) {
 	try {
-		let userData = yield call(Api.fetchUserData, action.payload)
-		yield put(saveUserData(userData))
+		//let userData = yield call(Api.fetchUserData, action.payload)
+		yield put(
+			saveUserData({
+				name: "shashi",
+				id: 123,
+			}),
+		)
 	} catch (error) {
 		console.log("error in getUserdata", error)
 	}
